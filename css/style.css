@@ -27,6 +27,7 @@ header button:focus {
 .product-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 15px 0;
     padding: 0 10px;
     background-color: #f7f7f7;
@@ -35,7 +36,6 @@ header button:focus {
 .product-item button{
     border-radius: 10px;
     height: 35px;
-    margin-top: 12px;
     border-width: 1px;
 }
 
