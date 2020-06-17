@@ -1,0 +1,48 @@
+header {
+    height: 50px;
+    background-color: #5f5f5f59;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+header button {
+    width: 100px;
+    height: 30px;
+    background-color: dimgrey;
+    color: white;
+    border-radius: 20px;
+}
+
+header button:focus {
+    outline: none;
+}
+
+.container {
+    /*max-width: 1300px;*/
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 0 10px;
+    background-color: #f7f7f7;
+}
+
+.product-item button{
+    border-radius: 10px;
+    height: 35px;
+    margin-top: 12px;
+    border-width: 1px;
+}
+
+.product-item button:hover{
+    background-color: #dadada;
+}
+.product-item button:focus{
+    outline: none;
+}
+
