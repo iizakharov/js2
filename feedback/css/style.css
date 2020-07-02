@@ -2,3 +2,16 @@
     margin: 25px auto;
     width: 400px;
 }
+
+.validate-good {
+    box-shadow: 0 0 2px 1px green;
+}
+
+.error-validate {
+    box-shadow: 0 0 2px 1px red;
+}
+
+.helper {
+    color: red;
+    font-size: 12px;
+}
