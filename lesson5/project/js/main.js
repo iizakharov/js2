@@ -5,8 +5,12 @@ const app = new Vue({
     data: {
         catalogUrl: '/catalogData.json',
         products: [],
-        imgCatalog: 'https://placehold.it/200x150'
-        searchData: '',
+        imgCatalog: 'https://placehold.it/200x150',
+        searchLine: '',
+        filtered: [],
+        isVisibleCart: true,
+        cardList: [],
+        quantity: 1,
     },
     methods: {
         getJson(url){
@@ -17,26 +21,47 @@ const app = new Vue({
                 })
         },
         addProduct(product){
-            console.log(product.id_product);
-        }
+            this.cardList.push(product);
+            this.isVisibleCart = false;
+        },
+        removeProduct(product){
+            document.querySelector(`.cart-item[data-id="${product.id_product}"]`).remove();
+
+
+        },
+        filterGoods(){
+            const regexp = new RegExp(this.searchLine, 'i'); // /ноут/i
+            this.filtered = this.products.filter(product => regexp.test(product.product_name));
+            this.products.forEach(el => {
+                const block = document.querySelector(`.product-item[data-id="${el.id_product}"]`);
+                if (!this.filtered.includes(el)) {
+                    block.classList.add('invisible');
+                } else {
+                    block.classList.remove('invisible');
+                }
+            })
+        },
+    },
+    computed: {
+
     },
     beforeCreate() {
         // console.log('beforeCreate');
     },
     created() {
-        console.log('created');
-        this.getJson(`${API + this.catalogUrl}`)
-            .then(data => {
-                for(let el of data){
-                    this.products.push(el);
-                }
-            });
+        // console.log('created');
     },
     beforeMount() {
         // console.log('beforeMount');
     },
     mounted(){
         // console.log('mounted');
+        this.getJson(`${API + this.catalogUrl}`)
+            .then(data => {
+                for(let el of data){
+                    this.products.push(el);
+                }
+            });
     },
     beforeUpdate() {
         // console.log('beforeUpdate');
