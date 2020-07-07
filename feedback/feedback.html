@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <title>feedback</title>
+</head>
+<body>
+<div class="feedback-window">
+    <form action="#">
+        <p>Имя:<br><input type="text" name="name" id="name" /></p>
+        <p id="nameHelp" class="helper"></p>
+        <p>Телефон:<br><input type="text" name="phone" id="phone" /></p>
+        <p id="phoneHelp" class="helper"></p>
+        <p>Email:<br> <input type="text" name="email" id="email" /></p>
+        <p id="emailHelp" class="helper"></p>
+        <p>Сообщение:<br> <textarea id="textarea" rows="3"></textarea>
+        <p><input type="submit" id="submit_button" onclick="return validateForm()"/></p>
+    </form>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
